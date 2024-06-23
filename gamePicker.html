@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué jugar?</title>
+    <script>
+      const juegos = [
+        "The Witcher 2",
+        "The Witcher 3",
+        "Pathfinder Wrath of the Righteous",
+        "Sid Meier's Civilization VI",
+        "Path of Exile",
+        "V  Rising",
+        "Fallout 4",
+        "Fallout New  Vegas",
+        "Metro 2033",
+        "Divinity: Original Sin 2",
+        "Ni No kuni: Wrath of the White Witch",
+        "Resident Evil 2",
+        "Resident Evil 3",
+        "Titan Fall 2",
+        "V  Rising",
+        "Yakuza 0",
+        "Stardew Valley",
+        "Nioh",
+        "Thronebreaker",
+      ];
+
+      function getRandomGame() {
+        const randomIndex = Math.floor(Math.random() * juegos.length);
+        const randomGame = juegos[randomIndex];
+
+        document.getElementById(
+          "randomGame"
+        ).textContent = `Vas a jugar: ${randomGame}`;
+      }
+
+      function showRandomGame() {
+        const list = document.getElementById("gameList");
+
+        juegos.forEach((game) => {
+          const elemento = document.createElement("li");
+          elemento.textContent = game;
+          list.appendChild(elemento);
+        });
+
+        window.onload = function () {
+          mostrarJuegos();
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <h1>¿Qué juego vas a jugar?</h1>
+    <ul id="gameList">
+      <li>The Witcher 2</li>
+      <li>The Witcher 3</li>
+      <li>Pathfinder Wrath of the Righteous</li>
+      <li>Sid Meier's Civilization VI</li>
+      <li>Path of Exile</li>
+      <li>V Rising</li>
+      <li>Fallout 4</li>
+      <li>Fallout New Vegas</li>
+      <li>Metro 2033</li>
+      <li>Divinity: Original Sin 2</li>
+      <li>Ni No kuni: Wrath of the White Witch</li>
+      <li>Resident Evil 2</li>
+      <li>Resident Evil 3</li>
+      <li>Titan Fall 2</li>
+      <li>V Rising</li>
+      <li>Yakuza 0</li>
+      <li>Stardew Valley</li>
+      <li>Nioh</li>
+      <li>Thronebreaker</li>
+    </ul>
+    <button onclick="getRandomGame()">Elegir</button>
+
+    <div id="randomGame">
+      <!-- The randomly chosen game will be displayed here -->
+    </div>
+  </body>
+</html>
